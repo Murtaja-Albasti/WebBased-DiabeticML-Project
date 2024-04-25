@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+    <title>AI-powered Diabetes  predector</title>
+</head>
+<body>
+  
+    <!-- <style>
+        body {
+            background-color: #14D9EF;
+        }
+
+       
+    </style> -->
+
+<div class="container-fluid">
+    <!-- <img src="{{url_for('static', filename='./myPic.jpg')}}" alt="Itatrtrt"> -->
+
+    <div class="container-fluid p-3 rounded ">
+        <div class="row">
+            <div class="col text-start mx-5 h1"><strong>Diabetes AI-powered predictor</strong></div>
+            <div class="col text-end mx-5 h1"><strong> developed by <span class="honk">Murtaja</span></strong></div>
+        </div>
+    </div>
+
+      <!-- intro -->
+      <section class="text-center text-sm-start">
+
+        <div class="container">
+          <div class="d-sm-flex align-items-center">
+            <div><img class="img-fluid " src="{{url_for('static', filename='./yanbuFestival.png')}}" alt="Itatrtrt"></div>
+            <span style="width: 0px; 
+            border-left: 1px solid #000; 
+            height: 500px; 
+            float: left;"></span><br>
+            
+            <div><img class="img-fluid rounded-circle " src="{{url_for('static', filename='./myPic.png')}}" alt="Itatrtrt"></div>
+          </div>
+        </div>
+
+      </section>
+      <!-- form for predict -->
+
+      <div class="container mt-5">
+        <form action="{{ url_for('predict') }}" method="post">
+            <!-- Input Box 1 -->
+            <div class="form-row d-flex">
+
+            <div class="form-group col-md-4 mx-3">
+                <label for="input1">Glucose 1:</label>
+                <input type="text" class="form-control" id="input1" placeholder="70 - 120" name="Glucose">
+            </div>
+    
+            <!-- Input Box 2 -->
+            <div class="form-group col-md-4 mx-3">
+                <label for="input2">BloodPressure 2:</label>
+                <input type="text" class="form-control" id="input2" placeholder="Enter value for Input 2" value="58" name="BloodPressure">
+            </div>
+            </div>
+            <!-- Input Box 3 -->
+            <div class="form-row d-flex">
+            <div class="form-group mx-3 col-md-4">
+                <label for="input3">SkinThickness 3:</label>
+                <input type="text" class="form-control" id="input3" placeholder="Enter value for Input 3" value="18" name="SkinThickness">
+            </div>
+    
+            <!-- Input Box 4 -->
+            <div class="form-group mx-3 col-md-4">
+                <label for="input4">Insulin 4:</label>
+                <input type="text" class="form-control" id="input4" placeholder="Enter value for Input 4" value="0" name="Insulin">
+            </div>
+          </div>
+            <!-- Input Box 5 -->
+            <div class="form-row d-flex">
+            <div class="form-group mx-3 col-md-4">
+                <label for="input5">BMI 5:</label>
+                <input type="text" class="form-control" id="input5" placeholder="Enter value for Input 5" value="24.6" name="BMI">
+            </div>
+    
+            <!-- Input Box 6 -->
+            <div class="form-group mx-3 col-md-4">
+                <label for="input6">DiabetesPedigreeFunction 6:</label>
+                <input type="text" class="form-control" id="input6" placeholder="0.008 - 2.42" name="DiabetesPedigreeFunction">
+            </div>
+          
+            <!-- Input Box 7 -->
+            <div class="form-group col-md-4">
+                <label for="input7">Age 7:</label>
+                <input type="text" class="form-control" id="input7" placeholder="Enter value for Input 7" name="Age">
+            </div>
+          </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">predict !</button>
+        </form>
+    </div>
+    <h2>{{ prediction_text }}</h2>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
